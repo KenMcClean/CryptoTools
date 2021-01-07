@@ -1,29 +1,47 @@
-$alphabet = ('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
+$plainText = ('R','Y','K','R','J','R','W','F','R','Z','X','Q','E','A','O','W','Q','Y','U','C','Q','E','A','W','U','S','Z','F','S','X','Y','O','S','V','S','E','A','O','U','S','Z','O','V','Q','I','A','Y','K','R','X','N','W','Y','S','I','V','A','M','Q','J','Q','V','Q','Y','U','R','X','D','S','H','A','X','X','A','W','W')
+#The plaintext is hardcoded in.  This could be adjusted take user input
+
 $result = @()
+$offset = 1
+#Start with an offset of 1
 
-foreach($letter in $alphabet){
+while($offset -lt 26){
+#While the offset is less than 26
 
-$offSet = 5
+foreach($letter in $plainText){
+#consider each letter in the plaintext message
 
 $sub = [int[]][char]$letter
+#get the ascii value of the letter, so that we can shift it
 
 foreach($item in $sub)
+#Consider each letter value
 {
 
 $item = $item - $offSet
+#Make the ASCII value of the letter it's value minus the offset
 
-if($item -lt 97){
-
+if($item -lt 65){
+#If the ASCII value of the offset letter is less than 65, we've strayed beyond the values assigned to letters, and need to loop back around
 
 $item = $item + 26 }
-
-
+#We loop back around by adding 26 to the ASCII Value of the letter. 
+#Therefor, instead of taking the value of A and taking three from it, we turn it into a Z and take three from it 
 
 $result += [char]$item
-
-
-}
+#Add the results to an array
 
 }
-
+}
+write-host "Offset by $offset"
 write-host $result
+#Display the results
+
+$result = @()
+#Wipe the array, otherwise it would contain all the values for all the offset attempts
+
+$offset++
+#increment the offset and start again
+}
+
+#Future improvements: take user input, remove all characters that aren't A-Z, and set the case of all letters to uppercase
