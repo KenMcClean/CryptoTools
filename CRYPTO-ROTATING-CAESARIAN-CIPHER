@@ -1,0 +1,29 @@
+$alphabet = ('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
+$result = @()
+
+foreach($letter in $alphabet){
+
+$offSet = 5
+
+$sub = [int[]][char]$letter
+
+foreach($item in $sub)
+{
+
+$item = $item - $offSet
+
+if($item -lt 97){
+
+
+$item = $item + 26 }
+
+
+
+$result += [char]$item
+
+
+}
+
+}
+
+write-host $result
