@@ -5,6 +5,7 @@ $finalArray = @()
 $index = 1
 
 $shuffledAlphabet = $alphabet | Sort-Object {get-random}
+#Take the alphabet and shuffle it randomly
 
 
 foreach($cipherLetter in $cipherText){
@@ -14,8 +15,8 @@ if( $newArray.Contains($cipherLetter))
 #if the array already contains the cipher letter, do nothing
 }else{
 $newArray.Add($cipherLetter, $shuffledAlphabet[$index])
+#We add the cipher letter to the hash newArray as a key, and add a letter from the shuffled alphabet as it's value
 $index++
-#Otherwise, add it to the array
 }
 
 }
