@@ -1,4 +1,4 @@
-$plainText = ('R','Y','K','R','J','R','W','F','R','Z','X','Q','E','A','O','W','Q','Y','U','C','Q','E','A','W','U','S','Z','F','S','X','Y','O','S','V','S','E','A','O','U','S','Z','O','V','Q','I','A','Y','K','R','X','N','W','Y','S','I','V','A','M','Q','J','Q','V','Q','Y','U','R','X','D','S','H','A','X','X','A','W','W')
+$cipherText = ('R','Y','K','R','J','R','W','F','R','Z','X','Q','E','A','O','W','Q','Y','U','C','Q','E','A','W','U','S','Z','F','S','X','Y','O','S','V','S','E','A','O','U','S','Z','O','V','Q','I','A','Y','K','R','X','N','W','Y','S','I','V','A','M','Q','J','Q','V','Q','Y','U','R','X','D','S','H','A','X','X','A','W','W')
 #The plaintext is hardcoded in.  This could be adjusted take user input
 
 $result = @()
@@ -8,7 +8,7 @@ $offset = 1
 while($offset -lt 26){
 #While the offset is less than 26
 
-foreach($letter in $plainText){
+foreach($letter in $cipherText){
 #consider each letter in the plaintext message
 
 $sub = [int[]][char]$letter
