@@ -1,0 +1,17 @@
+$alphabet = @('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
+$x = 0
+
+
+while($x -lt 26){
+$array = @()
+foreach($letter in $alphabet){
+$array += $letter
+
+}
+if($array[0] -notmatch "Z"){
+write-host $array[($x-26)..($x-1)]
+$x++
+}
+
+
+}
