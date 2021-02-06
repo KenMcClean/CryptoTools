@@ -3,6 +3,7 @@ $x = 0
 
 
 #---------Take the message as an input, and check to see if it's divisible by two. If it's divisible by two, it's not a prime number, and it's length should be offset by 1 unit
+#This has the bonus effect of checking to see if the public key input was a number
 $message = read-host "Please enter a message to be hashed"
 $mlen  = $message.length
 if(([int]$mlen / 2 ).GetType().Name -eq 'Int32'){
@@ -69,7 +70,8 @@ $mLenPrime = $true
 #---------
 
 
-write-host "Message has been padded to be" $message
-$message.Length
-
+write-host "Mlen is" $message.Length
+write-host "Public key is" $publicKey
+write-host "Ahash is" ([int]$publicKey*[int]$message.Length)
+write-host "Message is "$message
 
