@@ -7,8 +7,7 @@ function Get-Site
 {
 $site=Read-Host "Enter E to encode, D to decode, or X to exit"
 #By using a switch, we only give the user three choices.  That way, we don't need to do error handling
-Switch ($site)
-{
+Switch ($site)ffffffffffffffffffffffffffffffffffffffffffffff
 E {$input = read-host "Please enter a message to be encoded"
 $charArray = $input.tochararray()
 #Add the characters to an array
